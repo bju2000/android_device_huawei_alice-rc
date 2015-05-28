@@ -9,7 +9,7 @@ int check_usb_connection() {
 
    FILE *fptr;
 
-   fptr = fopen("/sys/devices/battery.45/power_supply/Battery/status", "rt");
+   fptr = fopen("/sys/devices/platform/bq_bci_battery.1/power_supply/Battery/status", "rt");
 
 	if (fptr) {
 		fgets(cap, 2, fptr);		
@@ -28,7 +28,7 @@ int battery_level() {
 
    FILE *fptr;
 
-   fptr = fopen("/sys/devices/battery.45/power_supply/Battery/capacity", "rt");
+   fptr = fopen("/sys/devices/platform/bq_bci_battery.1/power_supply/Battery/capacity", "rt");
 
 	if (fptr) {
                 fscanf(fptr, "%d", &val);
